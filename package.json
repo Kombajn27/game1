@@ -17,10 +17,9 @@
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:sass:dev": "node-sass --output-style expanded --source-map true -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
-    "watch": "parallelshell  \"npm run watch:browser-sync\" \"npm run watch:sassprefixer\"",
-    "watch:sassprefixer": "onchange sass/style.scss -- parallelshell \"watch:sass\" \"watch:autoprefixer\"",
-    "watch:sass": "node-sass --output-style compact -o css sass",
-    "watch:autoprefixer": "-d 100 autoprefixer-cli -o css/style.css css/style.css",
+    "watch": "parallelshell \"npm run watch:sass\" \"npm run watch:autoprefixer\" \"npm run watch:browser-sync\"",
+    "watch:sass": "sass --watch sass:css",
+    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixer.css css/style.css",
     "watch:browser-sync": "browser-sync start --server --files \"css/*.css\" \"*.html\""
   },
   "repository": {
