@@ -21,7 +21,7 @@ var newGameBtn = document.getElementById("js-newGameButton"),
 		score: 0
 	};
 
-setGameElements()
+// UWGGA - po zakończeniu gry wyświtla się stary wynik do momentu klikniecia w kamień, papier, nożyce
 
 newGameBtn.addEventListener("click", newGame);
 pickRock.addEventListener("click", function() {playerPick("rock");});
@@ -34,16 +34,21 @@ function setGameElements() {
 			newGameElem.style.display = "none";
 			pickElem.style.display = "block";
 			resultsElem.style.display = "block";
-		break;
+			break;
 		case "ended":
 			newGameBtn.innerText = "Jeszcze raz";
+			playerPointsElem.innerHTML = 0;
+    	computerPointsElem.innerHTML = 0;
 		case "notStarted":
-			default:
-	 		newGameElem.style.display = 'block';
-        	pickElem.style.display = 'none';
-        	resultsElem.style.display = 'none';
+		default:
+			newGameElem.style.display = 'block';
+			pickElem.style.display = 'none';
+			resultsElem.style.display = 'none';
+			break;
 	}
 }
+
+setGameElements() 
 
 function getComputerPick() {
 	var possiblePicks = ["rock", "paper", "scissors"];
@@ -86,7 +91,6 @@ function checkRoundWinner(playerPick, computerPick) {
         computer.score++;
     }
     setGamePoints();
-
 }
 
 function setGamePoints() {
@@ -108,4 +112,3 @@ function scoreSumUp() {
 	}
 	setGameElements()
 }
-
