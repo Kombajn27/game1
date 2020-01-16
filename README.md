@@ -1,6 +1,6 @@
 # :game_die: ROCK, PAPER, SCISSORS :game_die:
 
-**Check demo** at  [GitHub Pages](https://kombajn27.github.io/rock-paper-scissors/) and **source code** at [GitHub project homepage](https://kombajn27.github.io/rock-paper-scissors/).
+**Check demo** at  [GitHub Pages](https://kombajn27.github.io/rock-paper-scissors/) and **source code** at [GitHub project homepage](https://github.com/Kombajn27/rock-paper-scissors).
 
 Rock, paper, scissors game made with JS. Enter your name and check your luck (with computer as an opponent).
 Project is a task from Kodilla Coders Camp.    
